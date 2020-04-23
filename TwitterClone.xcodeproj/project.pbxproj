@@ -13,6 +13,11 @@
 		540D53172451D3AF008E56CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 540D53162451D3AF008E56CD /* Assets.xcassets */; };
 		540D531A2451D3AF008E56CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 540D53182451D3AF008E56CD /* LaunchScreen.storyboard */; };
 		540D53282451DAE4008E56CD /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53272451DAE4008E56CD /* MainTabController.swift */; };
+		540D532A2451DF0C008E56CD /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53292451DF0C008E56CD /* FeedController.swift */; };
+		540D532C2451DF7F008E56CD /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D532B2451DF7F008E56CD /* ExploreController.swift */; };
+		540D53322451E004008E56CD /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53312451E004008E56CD /* NotificationsController.swift */; };
+		540D53342451E016008E56CD /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53332451E016008E56CD /* ConversationsController.swift */; };
+		540D53362451E236008E56CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53352451E236008E56CD /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		540D53192451D3AF008E56CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		540D531B2451D3AF008E56CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		540D53272451DAE4008E56CD /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		540D53292451DF0C008E56CD /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		540D532B2451DF7F008E56CD /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		540D53312451E004008E56CD /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		540D53332451E016008E56CD /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		540D53352451E236008E56CD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +85,7 @@
 		540D53212451D87D008E56CD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				540D53352451E236008E56CD /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -90,6 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				540D53272451DAE4008E56CD /* MainTabController.swift */,
+				540D53292451DF0C008E56CD /* FeedController.swift */,
+				540D532B2451DF7F008E56CD /* ExploreController.swift */,
+				540D53312451E004008E56CD /* NotificationsController.swift */,
+				540D53332451E016008E56CD /* ConversationsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,9 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540D53322451E004008E56CD /* NotificationsController.swift in Sources */,
+				540D53342451E016008E56CD /* ConversationsController.swift in Sources */,
 				540D530E2451D3AA008E56CD /* AppDelegate.swift in Sources */,
+				540D53362451E236008E56CD /* Extensions.swift in Sources */,
+				540D532C2451DF7F008E56CD /* ExploreController.swift in Sources */,
 				540D53102451D3AA008E56CD /* SceneDelegate.swift in Sources */,
 				540D53282451DAE4008E56CD /* MainTabController.swift in Sources */,
+				540D532A2451DF0C008E56CD /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
