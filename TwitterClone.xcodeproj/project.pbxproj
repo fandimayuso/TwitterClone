@@ -20,6 +20,7 @@
 		540D53362451E236008E56CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53352451E236008E56CD /* Extensions.swift */; };
 		5449215724542A1400B3687E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449215624542A1400B3687E /* LoginController.swift */; };
 		5449215924542C9D00B3687E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449215824542C9D00B3687E /* RegistrationController.swift */; };
+		5449215B24543C7A00B3687E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449215A24543C7A00B3687E /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		540D53352451E236008E56CD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5449215624542A1400B3687E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		5449215824542C9D00B3687E /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		5449215A24543C7A00B3687E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				540D53352451E236008E56CD /* Extensions.swift */,
+				5449215A24543C7A00B3687E /* Utilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				540D53322451E004008E56CD /* NotificationsController.swift in Sources */,
 				540D53342451E016008E56CD /* ConversationsController.swift in Sources */,
+				5449215B24543C7A00B3687E /* Utilities.swift in Sources */,
 				540D530E2451D3AA008E56CD /* AppDelegate.swift in Sources */,
 				540D53362451E236008E56CD /* Extensions.swift in Sources */,
 				5449215724542A1400B3687E /* LoginController.swift in Sources */,
