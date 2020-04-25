@@ -18,6 +18,8 @@
 		540D53322451E004008E56CD /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53312451E004008E56CD /* NotificationsController.swift */; };
 		540D53342451E016008E56CD /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53332451E016008E56CD /* ConversationsController.swift */; };
 		540D53362451E236008E56CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D53352451E236008E56CD /* Extensions.swift */; };
+		5449215724542A1400B3687E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449215624542A1400B3687E /* LoginController.swift */; };
+		5449215924542C9D00B3687E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449215824542C9D00B3687E /* RegistrationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		540D53312451E004008E56CD /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		540D53332451E016008E56CD /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		540D53352451E236008E56CD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5449215624542A1400B3687E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		5449215824542C9D00B3687E /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		540D53232451D883008E56CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				544921552454294E00B3687E /* Authentication */,
 				540D53272451DAE4008E56CD /* MainTabController.swift */,
 				540D53292451DF0C008E56CD /* FeedController.swift */,
 				540D532B2451DF7F008E56CD /* ExploreController.swift */,
@@ -128,6 +133,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		544921552454294E00B3687E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5449215624542A1400B3687E /* LoginController.swift */,
+				5449215824542C9D00B3687E /* RegistrationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +219,11 @@
 				540D53342451E016008E56CD /* ConversationsController.swift in Sources */,
 				540D530E2451D3AA008E56CD /* AppDelegate.swift in Sources */,
 				540D53362451E236008E56CD /* Extensions.swift in Sources */,
+				5449215724542A1400B3687E /* LoginController.swift in Sources */,
 				540D532C2451DF7F008E56CD /* ExploreController.swift in Sources */,
 				540D53102451D3AA008E56CD /* SceneDelegate.swift in Sources */,
 				540D53282451DAE4008E56CD /* MainTabController.swift in Sources */,
+				5449215924542C9D00B3687E /* RegistrationController.swift in Sources */,
 				540D532A2451DF0C008E56CD /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
