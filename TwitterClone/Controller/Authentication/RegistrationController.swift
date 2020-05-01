@@ -127,49 +127,15 @@ class RegistrationController: UIViewController {
         guard let fullname = fullnameTextField.text else { return }
         guard let username = usernameTextField.text else { return }
         
-        // Convert profile image to data object
-        guard let imageData = profileImage.jpegData(compressionQuality: 0.3) else { return }
+        let credentials = AuthCredentials(email: email,
+                                          password: password,
+                                          fullname: fullname,
+                                          username: username,
+                                          profileImage: profileImage)
         
-        // Create unique id for image profile
-        let filename = NSUUID().uuidString
-        
-        let storageRef = STORAGE_PROFILE_IMAGES.child(filename)
-        
-        // Upload image profile to storage
-        storageRef.putData(imageData, metadata: nil) { (meta, error) in
-            
-            // Download profile image url for updating user information
-            storageRef.downloadURL { (url, error) in
-                
-                if let error = error {
-                    print("DEBUG: Error is \(error.localizedDescription)")
-                    return
-                }
-                
-                guard let profileImageUrl = url?.absoluteString else { return }
-                
-                // Authen
-                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                    
-                    if let error = error {
-                        print("DEBUG: Error is \(error.localizedDescription)")
-                        return
-                    }
-                    
-                    guard let uid = result?.user.uid else { return }
-                    
-                    // Create dictionary for updating user information to database
-                    let values = ["email": email,
-                                  "username": username,
-                                  "fullname": fullname,
-                                  "profileImageUrl": profileImageUrl]
-                    
-                    // Update user information to database
-                    REF_USERS.child(uid).updateChildValues(values) { (error, ref) in
-                        print("DEBUG: Successfully updated user information")
-                    }
-                }
-            }
+        // Register user
+        AuthService.shared.registerUser(credentials: credentials) { (error, ref) in
+            print("DEBUG: Sign up successful")
         }
     }
     
