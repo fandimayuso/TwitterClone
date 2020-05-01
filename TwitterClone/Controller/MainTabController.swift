@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTabController: UITabBarController {
     
@@ -28,13 +29,43 @@ class MainTabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureViewController()
-        configureUI()
+//        logUserOut()
+        view.backgroundColor = .twitterBlue
+        authenticateUserAndConfigureUI()
+    }
+    
+    // MARK: - API
+    
+    // Check if user is logged in or user is NOT logged in
+    func authenticateUserAndConfigureUI() {
+        
+        if Auth.auth().currentUser == nil {
+            // If user is NOT logged in then present login controller
+            DispatchQueue.main.async {
+                let nav = UINavigationController(rootViewController: LoginController())
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+        } else {
+            // If user is logged in then configure ui
+            configureViewController()
+            configureUI()
+        }
+    }
+    
+    func logUserOut() {
+        
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+        }
     }
     
     // MARK: - Actions
     
     @objc func actionButtonTapped() {
+        
         print("123")
     }
     
@@ -49,6 +80,7 @@ class MainTabController: UITabBarController {
     
     func configureViewController() {
         
+        // Create view controller for tabbar
         let feed = templateNavigationController(image: UIImage(named: "home_unselected"), rootViewController: FeedController())
         let explore = templateNavigationController(image: UIImage(named: "search_unselected"), rootViewController: ExploreController())
         let notifications = templateNavigationController(image: UIImage(named: "like_unselected"), rootViewController: NotificationsController())
@@ -57,6 +89,7 @@ class MainTabController: UITabBarController {
         viewControllers = [feed, explore, notifications, conversations]
     }
     
+    // Embed navigation controller to virw controller
     func templateNavigationController(image: UIImage?, rootViewController: UIViewController) -> UINavigationController {
         
         let nav = UINavigationController(rootViewController: rootViewController)
