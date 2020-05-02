@@ -46,7 +46,7 @@ struct AuthService {
         // Upload image profile to storage
         storageRef.putData(imageData, metadata: nil) { (meta, error) in
             
-            // Download profile image url from storage for updating user information
+            // Get profile image url from storage for updating user information
             storageRef.downloadURL { (url, error) in
                 if let error = error {
                     print("DEBUG: Error is \(error.localizedDescription)")
