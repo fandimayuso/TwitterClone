@@ -23,6 +23,7 @@
 		5449215924542C9D00B3687E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449215824542C9D00B3687E /* RegistrationController.swift */; };
 		5449215B24543C7A00B3687E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449215A24543C7A00B3687E /* Utilities.swift */; };
 		544F0A8E24587288007689EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 544F0A8D24587288007689EB /* GoogleService-Info.plist */; };
+		54598B39245EB16D00902FFA /* UploadTweetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54598B38245EB16D00902FFA /* UploadTweetController.swift */; };
 		54C4CD77245D559C0063C92B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4CD76245D559C0063C92B /* UserService.swift */; };
 		54C4CD79245D5BFB0063C92B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4CD78245D5BFA0063C92B /* User.swift */; };
 		54EA9906245BFA34004E99D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA9905245BFA34004E99D5 /* Constants.swift */; };
@@ -47,6 +48,7 @@
 		5449215824542C9D00B3687E /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		5449215A24543C7A00B3687E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		544F0A8D24587288007689EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		54598B38245EB16D00902FFA /* UploadTweetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetController.swift; sourceTree = "<group>"; };
 		54C4CD76245D559C0063C92B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		54C4CD78245D5BFA0063C92B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		54EA9905245BFA34004E99D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				540D532B2451DF7F008E56CD /* ExploreController.swift */,
 				540D53312451E004008E56CD /* NotificationsController.swift */,
 				540D53332451E016008E56CD /* ConversationsController.swift */,
+				54598B38245EB16D00902FFA /* UploadTweetController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				540D53362451E236008E56CD /* Extensions.swift in Sources */,
 				5449215724542A1400B3687E /* LoginController.swift in Sources */,
 				54EA9908245C0A6C004E99D5 /* AuthService.swift in Sources */,
+				54598B39245EB16D00902FFA /* UploadTweetController.swift in Sources */,
 				54C4CD79245D5BFB0063C92B /* User.swift in Sources */,
 				540D532C2451DF7F008E56CD /* ExploreController.swift in Sources */,
 				540D53102451D3AA008E56CD /* SceneDelegate.swift in Sources */,
