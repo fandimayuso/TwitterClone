@@ -81,6 +81,7 @@ class UploadTweetController: UIViewController {
                 return
             }
             
+            // If success
             self.dismiss(animated: true, completion: nil)
         }
     }

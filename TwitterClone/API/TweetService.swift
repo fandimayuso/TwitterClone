@@ -26,4 +26,22 @@ struct TweetService {
         // Auto generate unique tweet id and update to database
         REF_TWEETS.childByAutoId().updateChildValues(values, withCompletionBlock: completion)
     }
+    
+    func fetchTweets(completion: @escaping([Tweet]) -> Void) {
+        
+        var tweets = [Tweet]()
+        
+        // Get all tweets from database
+        REF_TWEETS.observe(.childAdded) { snapshot in
+            
+            guard let dictionary = snapshot.value as? [String: Any] else { return }
+            
+            let tweetID = snapshot.key  // Get tweet id
+            let tweet = Tweet(tweetID: tweetID, dictionary: dictionary)
+            
+            tweets.append(tweet)
+            
+            completion(tweets)
+        }
+    }
 }
