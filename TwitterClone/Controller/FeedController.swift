@@ -16,7 +16,6 @@ class FeedController: UICollectionViewController {
     // MARK: - Properties
     
     var user: User? {
-        
         didSet {
             configureLeftBarButton()
         }
@@ -95,6 +94,6 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: 120)
     }
 }
