@@ -34,11 +34,11 @@ class UploadTweetController: UIViewController {
     private let profileImageView: UIImageView = {
         
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.setDimensions(width: 48, height: 48)
         imageView.layer.cornerRadius = 48 / 2
-        imageView.backgroundColor = .blue
+        imageView.backgroundColor = .twitterBlue
         
         return imageView
     }()
