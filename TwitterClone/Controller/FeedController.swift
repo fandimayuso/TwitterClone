@@ -41,7 +41,7 @@ class FeedController: UICollectionViewController {
     func fetchTweets() {
         
         TweetService.shared.fetchTweets { tweets in
-            self.tweets = tweets
+            self.tweets = tweets.reversed()
         }
     }
     
