@@ -39,6 +39,7 @@ struct TweetService {
         var tweets = [Tweet]()
         
         // Get all tweets from database
+        // observe(.childAdded) is working like for-loop
         REF_TWEETS.observe(.childAdded) { snapshot in
             
             guard let dictionary = snapshot.value as? [String: Any] else { return }
@@ -52,6 +53,30 @@ struct TweetService {
                 tweets.append(tweet)
                 
                 completion(tweets)
+            }
+        }
+    }
+    
+    func fetchTweets(forUser user: User, completion: @escaping([Tweet]) -> Void) {
+        var tweets = [Tweet]()
+        
+        // Fetch user-tweets to get all tweet id of selected user
+        // observe(.childAdded) is working like for-loop
+        REF_USER_TWEETS.child(user.uid).observe(.childAdded) { snapshot in
+            let tweetID = snapshot.key
+            
+            // Fetch tweet from tweet id
+            REF_TWEETS.child(tweetID).observeSingleEvent(of: .value) { snapshot in
+                guard let dictionary = snapshot.value as? [String: Any] else { return }
+                guard let uid = dictionary["uid"] as? String else { return }
+                
+                // Pass uid of user who has created that tweet to get his/her information
+                UserService.shared.fetchUser(uid: uid) { user in
+                    let tweet = Tweet(user: user, tweetID: tweetID, dictionary: dictionary)
+                    tweets.append(tweet)
+                    
+                    completion(tweets)
+                }
             }
         }
     }
