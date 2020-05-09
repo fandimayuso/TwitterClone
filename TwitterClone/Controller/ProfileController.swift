@@ -38,10 +38,10 @@ class ProfileController: UICollectionViewController {
         collectionView.backgroundColor = .white
         collectionView.contentInsetAdjustmentBehavior = .never
         
-        // Register table cell
+        // Register collection cell
         collectionView.register(TweetCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        // Register table header
+        // Register collection header
         collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
     }
 }
@@ -77,7 +77,7 @@ extension ProfileController {
 extension ProfileController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 300)
+        return CGSize(width: view.frame.width, height: 350)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
