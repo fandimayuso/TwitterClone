@@ -48,7 +48,7 @@ struct UserService {
         // Current user startd following other user
         REF_USER_FOLLOWING.child(currentUid).updateChildValues([uid: 1]) { (error, ref) in
             // Other user gained current user as a follower
-            REF_USER_FOLLOWES.child(uid).updateChildValues([currentUid: 1], withCompletionBlock: completion)
+            REF_USER_FOLLOWERS.child(uid).updateChildValues([currentUid: 1], withCompletionBlock: completion)
         }
     }
     
@@ -58,7 +58,7 @@ struct UserService {
         // Remove other user from current user
         REF_USER_FOLLOWING.child(currentUid).child(uid).removeValue { (err, ref) in
             // Remove current user from other user
-            REF_USER_FOLLOWES.child(uid).child(currentUid).removeValue(completionBlock: completion)
+            REF_USER_FOLLOWERS.child(uid).child(currentUid).removeValue(completionBlock: completion)
         }
     }
     
@@ -68,6 +68,20 @@ struct UserService {
         REF_USER_FOLLOWING.child(currentUid).child(uid).observeSingleEvent(of: .value) { snapshot in
             // Check if uid contains in current uid as a child
             completion(snapshot.exists())
+        }
+    }
+    
+    func fetchUserStats(uid: String, completion: @escaping(UserRelationStats) -> Void) {
+        REF_USER_FOLLOWERS.child(uid).observeSingleEvent(of: .value) { snapshot in
+            let followers = snapshot.children.allObjects.count
+            
+            REF_USER_FOLLOWING.child(uid).observeSingleEvent(of: .value) { snapshot in
+                let following = snapshot.children.allObjects.count
+                
+                let stats = UserRelationStats(followers: followers, following: following)
+                
+                completion(stats)
+            }
         }
     }
 }
