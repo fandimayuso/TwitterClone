@@ -15,7 +15,7 @@ class ProfileController: UICollectionViewController {
     
     // MARK: - Properties
     
-    private var user: User
+    private var user: User  // This is not current user, it is other user that current user is looking his/her profile
     
     private var tweets = [Tweet]() {
         didSet {
@@ -40,6 +40,7 @@ class ProfileController: UICollectionViewController {
         
         configureCollectionView()
         fetchTweets()
+        checkIfUserIsFollowed()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +55,13 @@ class ProfileController: UICollectionViewController {
     func fetchTweets() {
         TweetService.shared.fetchTweets(forUser: user) { tweets in
             self.tweets = tweets
+        }
+    }
+    
+    func checkIfUserIsFollowed() {
+        UserService.shared.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
+            self.user.isFollowed = isFollowed
+            self.collectionView.reloadData()
         }
     }
     
@@ -119,17 +127,15 @@ extension ProfileController: ProfileHeaderDelegate {
     
     func handleEditProfileFollow(_ header: ProfileHeader) {
         
-        print("DEBUG: User is followed is \(user.isFollowed) before button tap")
-        
         if user.isFollowed {
             UserService.shared.unfollowUser(uid: user.uid) { (err, ref) in
                 self.user.isFollowed = false
-                print("DEBUG: User is followed is \(self.user.isFollowed) after button tap")
+                self.collectionView.reloadData()
             }
         } else {
             UserService.shared.followUser(uid: user.uid) { (err, ref) in
                 self.user.isFollowed = true
-                print("DEBUG: User is followed is \(self.user.isFollowed) after button tap")
+                self.collectionView.reloadData()
             }
         }
     }
