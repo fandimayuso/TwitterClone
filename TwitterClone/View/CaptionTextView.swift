@@ -12,7 +12,7 @@ class CaptionTextView: UITextView {
     
     // MARK: - Properties
     
-    let placeholderLabel: UILabel = {
+    var placeholderLabel: UILabel = {
         
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
